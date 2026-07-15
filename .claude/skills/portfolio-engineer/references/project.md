@@ -6,61 +6,153 @@ Personal Portfolio
 
 ---
 
-## Purpose
+# Mission
 
-Create a premium personal portfolio that demonstrates professional Front-End and Full Stack engineering skills while leaving a strong first impression on recruiters, hiring managers and technical interviewers.
+Create a premium personal portfolio that showcases professional software engineering skills rather than acting as a traditional résumé website.
 
-The portfolio should communicate engineering quality, attention to detail and strong UI/UX thinking within the first few seconds.
+The portfolio itself should demonstrate engineering quality, clean architecture, accessibility, performance, UI/UX excellence, and full-stack development capabilities.
 
----
-
-## Goals
-
-- Build a modern portfolio website.
-- Showcase technical skills through the portfolio itself.
-- Present projects professionally.
-- Support LinkedIn visibility.
-- Be easy to maintain through an admin panel.
-- Demonstrate scalable architecture.
-- Follow enterprise-level coding standards.
+It should leave a strong first impression within the first 10 seconds.
 
 ---
 
-## Target Audience
+# Objectives
+
+Primary objectives:
+
+- Showcase engineering skills
+- Impress recruiters and hiring managers
+- Support LinkedIn presence
+- Serve as a technical portfolio
+- Demonstrate modern frontend architecture
+- Demonstrate backend engineering practices
+- Be easy to extend over time
+
+---
+
+# Target Audience
+
+Primary
 
 - Recruiters
 - HR Specialists
 - Engineering Managers
 - Technical Interviewers
-- Software Engineers
-- LinkedIn Visitors
+
+Secondary
+
+- Developers
+- Open Source Community
+- Clients
+- Networking contacts
 
 ---
 
-## Design Philosophy
+# Product Goals
 
-Inspired by
+The portfolio should communicate:
 
-- Apple
-- Linear
-- Vercel
-- Stripe
-- Raycast
-
-Design principles
-
-- Minimal
-- Elegant
-- Premium
-- Fast
-- Accessible
-- Motion-driven
-- Clean typography
-- Spacious layouts
+- Professionalism
+- Engineering maturity
+- Attention to detail
+- Modern UI/UX
+- Strong frontend knowledge
+- Full-stack capability
 
 ---
 
-## Technology Stack
+# Project Scope
+
+## Public Website
+
+- Landing Page
+- Hero
+- About
+- Skills
+- Experience
+- Projects
+- Project Details
+- Blog
+- Contact
+- Resume Download
+
+---
+
+## Admin Panel
+
+- Authentication
+- Dashboard
+- Manage Projects
+- Manage Blog Posts
+- Manage Skills
+- Manage Experience
+- Manage Certificates
+- Manage Contact Messages
+- SEO Settings
+
+---
+
+# Development Phases
+
+## Version 1
+
+Goal
+
+Launch a premium public portfolio.
+
+Features
+
+- Hero
+- About
+- Skills
+- Experience
+- Projects
+- Contact
+- Resume
+- Dark / Light Theme
+- Responsive Design
+- SEO
+- Accessibility
+
+---
+
+## Version 2
+
+Goal
+
+Introduce a content management system.
+
+Features
+
+- Login
+- Admin Dashboard
+- CRUD Operations
+- Image Upload
+- Markdown Support
+- JWT Authentication
+- PostgreSQL Integration
+
+---
+
+## Version 3
+
+Goal
+
+Transform the portfolio into a complete developer platform.
+
+Features
+
+- Blog
+- GitHub Integration
+- LeetCode Integration
+- Analytics Dashboard
+- Multi-language Support
+- AI-assisted Content Management
+- Visitor Statistics
+
+---
+
+# Technology Stack
 
 Frontend
 
@@ -69,6 +161,7 @@ Frontend
 - Vite
 - Tailwind CSS
 - Framer Motion
+- React Router
 - TanStack Query
 
 Backend
@@ -81,72 +174,45 @@ Authentication
 
 - JWT
 - Refresh Token
+- HttpOnly Cookies
 
-Deployment
-
-Frontend
+Infrastructure
 
 - Vercel
-
-Backend
-
-- Render / Azure
-
-Database
-
+- Render or Azure
 - Neon PostgreSQL
-
-Storage
-
 - Cloudinary
 
 ---
 
-## Functional Requirements
+# Non-Functional Requirements
 
-Public Website
+The project must be:
 
-- Hero
-- About
-- Skills
-- Experience
-- Projects
-- Blog
-- Contact
-- Resume Download
-
-Admin Panel
-
-- Login
-- Dashboard
-- Manage Projects
-- Manage Blog
-- Manage Experience
-- Manage Skills
-- Manage Contact Messages
-
----
-
-## Non Functional Requirements
-
-- Responsive
-- Accessible
-- SEO Friendly
 - Production Ready
-- Scalable
-- Maintainable
-- Reusable Components
+- Responsive
+- Accessible (WCAG AA)
+- SEO Friendly
 - High Performance
+- Maintainable
+- Scalable
+- Testable
 
 ---
 
-## Long Term Vision
+# Success Criteria
 
-Transform the portfolio into a full developer platform including:
+The project is considered successful if it:
 
-- Blog
-- CMS
-- Analytics
-- GitHub Integration
-- LeetCode Integration
-- AI-assisted Content Management
+- Demonstrates professional engineering practices.
+- Provides an outstanding first impression.
+- Is easy to maintain and extend.
+- Meets accessibility standards.
+- Achieves high Lighthouse scores.
+- Can be confidently presented during technical interviews.
+
+---
+
+# Long-Term Vision
+
+The portfolio should evolve into a personal engineering platform capable of showcasing projects, articles, achievements, analytics, and technical expertise through a scalable architecture and maintainable codebase.

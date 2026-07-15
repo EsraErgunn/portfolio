@@ -2,9 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+
+    <!--
+      Global, route-independent fallback. The per-route Seo component
+      (src/components/Seo.tsx) sets the real <title> and description once
+      React mounts - these exist for the pre-hydration window and for any
+      crawler/share-unfurler that doesn't execute JavaScript, since this is
+      a client-rendered SPA with no server-side rendering: those consumers
+      never see anything React renders, regardless of route.
+    -->
+    <title>Esra · Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio showcasing front-end and full-stack engineering work."
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Matches src/index.css's light/dark --background token, so mobile
+         browser chrome is correct before the app's own theme class ever
+         applies. Static, so it reflects OS preference only - it does not
+         track the in-app manual theme toggle. -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#080c16" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph: site-wide values the per-route Seo component never
+         sets (it only ever sets og:title/og:description/og:image).
+         NOTE: og:image below is root-relative. Most crawlers resolve it
+         fine against the page URL, but the OG spec technically wants an
+         absolute URL - swap it (and Seo.tsx's OG_IMAGE_PATH default) for
+         the full https://... address once this is deployed to a real
+         domain. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Esra" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards fall back to the Open Graph tags above for
+         title/description/image per Twitter's own spec, so only the card
+         type - which has no Open Graph equivalent - needs to be declared. -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!--
+      Fonts are self-hosted (@fontsource-variable/inter, bundled by Vite),
+      not loaded from a third-party host - so there is no font origin to
+      preconnect to. That's already the fast path, not a gap.
+    -->
   </head>
   <body>
     <div id="root"></div>

@@ -1,111 +1,118 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
+/**
+ * Design tokens
+ * Source of truth: .claude/skills/portfolio-engineer/references/design-system.md
+ *
+ * Colors are HSL channel triplets (no `hsl()` wrapper) so Tailwind can inject
+ * alpha via `hsl(var(--x) / <alpha-value>)`. Swapping `.dark` on <html>
+ * re-themes the entire app without touching component code.
+ */
+@layer base {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --primary: 222 89% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Darker than the raw brand green/amber would suggest - at the
+       original 45%/50% lightness, text-success/text-warning (Badge's
+       status pills, ContactCard's copy-success icon) measured 2.3:1 and
+       2.1:1 against a white page background, both well under WCAG AA's
+       4.5:1 for text. These lightness values are the minimum darkening
+       needed to clear 4.5:1 while staying visually recognizable as
+       green/amber. Dark mode's tokens already passed and are untouched. */
+    --success: 142 71% 30%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 32%;
+    --warning-foreground: 0 0% 100%;
+
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --ring: 222 89% 55%;
+
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 20% 98%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 16% 65%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 47% 6%;
+
+    --accent: 263 85% 68%;
+    --accent-foreground: 222 47% 6%;
+
+    --success: 142 71% 55%;
+    --success-foreground: 222 47% 6%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 222 47% 6%;
+
+    --danger: 0 91% 71%;
+    --danger-foreground: 222 47% 6%;
+
+    --border: 217 33% 18%;
+    --ring: 217 91% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-background font-sans text-body text-foreground antialiased;
+  }
+
+  /* WCAG AA: always show a visible focus indicator for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+@layer utilities {
+  /* Visually hidden but accessible to screen readers; reveals on focus
+     (used for the MainLayout skip-to-content link). */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
