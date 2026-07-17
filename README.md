@@ -14,7 +14,9 @@ Most personal portfolios are content wrapped in a static template. This one is b
 
 ## Live Demo
 
-Not yet deployed to a public domain. The project is configured for static hosting on Vercel (`vercel.json` includes the SPA rewrite rule), and `public/sitemap.xml` / `public/robots.txt` are already in place with a placeholder domain pending the first deployment.
+**[https://esra-ergun.vercel.app](https://esra-ergun.vercel.app)**
+
+Deployed on Vercel via the SPA rewrite rule in `vercel.json`.
 
 ## Features
 
@@ -128,7 +130,7 @@ The project targets WCAG AA, not as a checklist item but as a set of concrete, v
 - Per-route `<title>`, meta description, Open Graph tags, and canonical URL, set by a single `Seo` component reused on every page.
 - Static, crawler-visible fallback metadata in `index.html` for the pre-hydration window (this is a client-rendered SPA with no SSR, so anything that doesn't execute JavaScript only ever sees this fallback).
 - `theme-color` meta tags matched to the light/dark background tokens, so mobile browser chrome is correct before the app's own theme logic runs.
-- `public/robots.txt` and `public/sitemap.xml` are present and wired together via a `Sitemap:` directive. The sitemap and Open Graph image currently reference a placeholder domain, explicitly flagged with a `TODO` comment, pending the first real deployment.
+- `public/robots.txt` and `public/sitemap.xml` are present and wired together via a `Sitemap:` directive, both pointing at the production domain (`https://esra-ergun.vercel.app`), which is also the single source (`SITE_URL` in `src/constants/seo.constants.ts`) for the absolute Open Graph image URL.
 - A `site.webmanifest` and a full favicon set (SVG, multiple PNG sizes, Apple touch icon) are included.
 
 ## Getting Started

@@ -34,15 +34,14 @@
 
     <!-- Open Graph: site-wide values the per-route Seo component never
          sets (it only ever sets og:title/og:description/og:image).
-         NOTE: og:image below is root-relative. Most crawlers resolve it
-         fine against the page URL, but the OG spec technically wants an
-         absolute URL - swap it (and Seo.tsx's OG_IMAGE_PATH default) for
-         the full https://... address once this is deployed to a real
-         domain. -->
+         og:image is absolute (production domain: esra-ergun.vercel.app),
+         matching Seo.tsx's OG_IMAGE_PATH constant (src/constants/seo.constants.ts)
+         so a share unfurler never sees a mismatched value between the
+         pre-hydration fallback and the post-mount, per-route value. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Esra" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://esra-ergun.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 

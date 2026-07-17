@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: replace https://your-domain.com with the real production domain before deploying. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.com/</loc>
+    <loc>https://esra-ergun.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/about</loc>
+    <loc>https://esra-ergun.vercel.app/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/skills</loc>
+    <loc>https://esra-ergun.vercel.app/skills</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/experience</loc>
+    <loc>https://esra-ergun.vercel.app/experience</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/projects</loc>
+    <loc>https://esra-ergun.vercel.app/projects</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/resume</loc>
+    <loc>https://esra-ergun.vercel.app/resume</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://your-domain.com/contact</loc>
+    <loc>https://esra-ergun.vercel.app/contact</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
