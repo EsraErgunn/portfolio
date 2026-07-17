@@ -34,7 +34,11 @@ export function Hero() {
           <HeroSocialLinks socialLinks={content.socialLinks} />
         </motion.div>
 
-        <HeroImage initials={content.avatarInitials} name={content.name} />
+        <HeroImage
+          initials={content.avatarInitials}
+          name={content.name}
+          imageSrc={content.avatarImageSrc}
+        />
       </Container>
 
       <HeroScrollIndicator />

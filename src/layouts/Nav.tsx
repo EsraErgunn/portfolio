@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: ROUTES.SKILLS, label: PAGE_TITLES.skills },
   { to: ROUTES.EXPERIENCE, label: PAGE_TITLES.experience },
   { to: ROUTES.PROJECTS, label: PAGE_TITLES.projects },
+  { to: ROUTES.RESUME, label: PAGE_TITLES.resume },
   { to: ROUTES.CONTACT, label: PAGE_TITLES.contact },
 ] as const
 
@@ -34,7 +35,7 @@ interface NavProps {
 export function Nav({ id, className, onNavigate, label = 'Primary' }: NavProps) {
   return (
     <nav id={id} aria-label={label} className={className}>
-      <ul className="flex flex-col gap-1 md:flex-row md:gap-2">
+      <ul className="flex flex-col gap-1 md:flex-row md:flex-wrap md:gap-2">
         {NAV_ITEMS.map((item) => (
           <li key={item.to}>
             <NavLink

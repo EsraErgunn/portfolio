@@ -26,6 +26,7 @@ interface ProjectCardProps {
  */
 export function ProjectCard({ project }: ProjectCardProps) {
   const status = STATUS_CONFIG[project.status]
+  const hasLinks = Boolean(project.links.github || project.links.liveDemo)
 
   return (
     <motion.div
@@ -71,29 +72,33 @@ export function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </ul>
 
-          <div className="mt-2 flex items-center gap-3">
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${project.title} source code on GitHub`}
-              className={iconButtonVariants({ size: 'sm' })}
-            >
-              <GithubIcon className="h-4 w-4" aria-hidden="true" />
-            </a>
+          {hasLinks && (
+            <div className="mt-2 flex items-center gap-3">
+              {project.links.github && (
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} source code on GitHub`}
+                  className={iconButtonVariants({ size: 'sm' })}
+                >
+                  <GithubIcon className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
 
-            {project.links.liveDemo && (
-              <a
-                href={project.links.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'gap-2')}
-              >
-                Live demo
-                <ExternalLink className="h-4 w-4" aria-hidden="true" />
-              </a>
-            )}
-          </div>
+              {project.links.liveDemo && (
+                <a
+                  href={project.links.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'gap-2')}
+                >
+                  Live demo
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </Card>
     </motion.div>

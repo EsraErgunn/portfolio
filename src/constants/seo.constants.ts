@@ -7,7 +7,7 @@ export const SITE_NAME = 'Esra' as const
  * even before that page has real page-specific copy of its own.
  */
 export const SITE_DESCRIPTION =
-  'Personal portfolio showcasing front-end and full-stack engineering work.' as const
+  'Portfolio of Hasibe Esra Ergün - Software Engineer specializing in full-stack development, computer vision, and applied AI.' as const
 
 export const OG_IMAGE_PATH = '/og-image.png' as const
 
@@ -21,5 +21,6 @@ export const PAGE_TITLES = {
   skills: 'Skills',
   experience: 'Experience',
   projects: 'Projects',
+  resume: 'Resume',
   contact: 'Contact',
 } as const

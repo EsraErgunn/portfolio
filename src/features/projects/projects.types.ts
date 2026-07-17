@@ -1,7 +1,8 @@
 export type ProjectStatus = 'live' | 'in-progress' | 'archived'
 
 export interface ProjectLinks {
-  github: string
+  /** Omitted when the project has no public repository yet. */
+  github?: string
   liveDemo?: string
 }
 

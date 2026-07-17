@@ -1,4 +1,4 @@
-import { ROUTES, SITE_NAME, SOCIAL_LINKS } from '@/constants'
+import { ROUTES, SITE_NAME, SOCIAL_LINKS, PROFILE_IMAGE_SRC } from '@/constants'
 import type { HeroContent } from './hero.types'
 
 /**
@@ -8,10 +8,10 @@ import type { HeroContent } from './hero.types'
  */
 export const HERO_CONTENT: HeroContent = {
   greeting: "Hello, I'm",
-  name: SITE_NAME,
+  name: 'Hasibe Esra Ergün',
   title: 'Software Engineer',
   description:
-    'I build fast, accessible, and thoughtfully engineered web applications - from interface to infrastructure.',
+    'Computer Engineering student building end-to-end software systems - from AI model training to full-stack deployment - with ASP.NET Core, React, and modern AI technologies.',
   primaryCta: { label: 'View Projects', href: ROUTES.PROJECTS },
   secondaryCta: { label: 'Get in Touch', href: ROUTES.CONTACT },
   socialLinks: [
@@ -19,4 +19,5 @@ export const HERO_CONTENT: HeroContent = {
     { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, icon: 'linkedin' },
   ],
   avatarInitials: SITE_NAME.slice(0, 1).toUpperCase(),
+  avatarImageSrc: PROFILE_IMAGE_SRC,
 }

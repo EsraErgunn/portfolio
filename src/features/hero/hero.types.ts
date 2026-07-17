@@ -20,4 +20,6 @@ export interface HeroContent {
   secondaryCta: HeroCta
   socialLinks: HeroSocialLink[]
   avatarInitials: string
+  /** Real photo path, once one exists. Avatar falls back to initials when absent. */
+  avatarImageSrc?: string
 }

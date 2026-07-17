@@ -3,35 +3,44 @@ import type { SkillsContent } from './skills.types'
 
 /**
  * All Skills copy lives here, not inline in components - same pattern as
- * hero.constants.ts and about.constants.ts. The categories mirror the
- * stack documented in project.md's Technology Stack section, so nothing
- * here is invented. Swapping this for a CMS later means changing
- * skills.hook.ts only.
+ * hero.constants.ts and about.constants.ts. Swapping this for a CMS later
+ * means changing skills.hook.ts only.
  */
 export const SKILLS_CONTENT: SkillsContent = {
   heading: PAGE_TITLES.skills,
   intro:
-    'The languages, frameworks, and tools I use to design, build, and ship full-stack applications.',
+    'The languages, frameworks, and tools I use to design, build, and ship full-stack and AI-powered applications.',
   categories: [
     {
+      name: 'Languages',
+      skills: ['C#', 'Python', 'JavaScript', 'TypeScript', 'Dart'],
+    },
+    {
       name: 'Frontend',
-      skills: [
-        'React',
-        'TypeScript',
-        'Vite',
-        'Tailwind CSS',
-        'Framer Motion',
-        'React Router',
-        'TanStack Query',
-      ],
+      skills: ['React', 'Tailwind CSS', 'HTML', 'CSS', 'Three.js'],
     },
     {
       name: 'Backend',
-      skills: ['ASP.NET Core', 'Entity Framework Core', 'PostgreSQL', 'JWT Authentication'],
+      skills: ['ASP.NET Core', '.NET', 'REST API'],
     },
     {
-      name: 'Infrastructure',
-      skills: ['Vercel', 'Render', 'Neon', 'Cloudinary'],
+      name: 'Artificial Intelligence',
+      skills: [
+        'YOLOv8',
+        'ByteTrack',
+        'OpenCV',
+        'TensorFlow Lite',
+        'Image Classification',
+        'Deep Learning',
+      ],
+    },
+    {
+      name: 'Database',
+      skills: ['PostgreSQL', 'SQL Server', 'Redis'],
+    },
+    {
+      name: 'Tools',
+      skills: ['Git', 'GitHub', 'Docker', 'Swagger', 'Postman'],
     },
   ],
 }

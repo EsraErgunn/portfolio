@@ -1,44 +1,27 @@
 import { PAGE_TITLES } from '@/constants'
 import type { ProjectsContent } from './projects.types'
 
-/**
- * PLACEHOLDER DATA - same reasoning as experience.constants.ts: real
- * project names, descriptions, screenshots, and links can't be honestly
- * generated, only provided by the person they belong to. Every entry
- * below is intentionally bracketed so nothing here could be mistaken for
- * a real, shippable project. Replace every entry before this goes live;
- * doing so only means editing this file.
- */
 export const PROJECTS_CONTENT: ProjectsContent = {
   heading: PAGE_TITLES.projects,
   intro: 'A selection of projects that show how I think, build, and ship.',
   projects: [
     {
-      title: '[Project Name]',
+      title: 'AI-Based Football Analytics System',
       description:
-        '[Describe what this project does, the problem it solves, and your role in building it.]',
-      technologies: ['[Tech]', '[Tech]', '[Tech]'],
-      status: 'live',
-      links: { github: 'https://github.com', liveDemo: 'https://example.com' },
-      imageAlt: '[Project Name] preview',
-    },
-    {
-      title: '[Project Name]',
-      description:
-        '[Describe what this project does, the problem it solves, and your role in building it.]',
-      technologies: ['[Tech]', '[Tech]'],
+        'Computer vision pipeline for football match analysis: player/ball tracking, homography, and Kalman-filter modeling to detect events and report metrics in real time.',
+      technologies: ['YOLOv8', 'ByteTrack', 'OpenCV', 'Python'],
       status: 'in-progress',
-      links: { github: 'https://github.com' },
-      imageAlt: '[Project Name] preview',
+      links: {},
+      imageAlt: 'AI-Based Football Analytics System preview',
     },
     {
-      title: '[Project Name]',
+      title: 'Plant Disease Detection Mobile Application',
       description:
-        '[Describe what this project does, the problem it solves, and your role in building it.]',
-      technologies: ['[Tech]', '[Tech]', '[Tech]'],
-      status: 'archived',
-      links: { github: 'https://github.com' },
-      imageAlt: '[Project Name] preview',
+        'Flutter + deep learning app that identifies plant diseases from leaf images and gives weather- and location-aware treatment recommendations with map integration.',
+      technologies: ['Flutter', 'Dart', 'TensorFlow Lite', 'Deep Learning'],
+      status: 'in-progress',
+      links: {},
+      imageAlt: 'Plant Disease Detection Mobile Application preview',
     },
   ],
 }

@@ -21,6 +21,9 @@ export const LazyExperiencePage = lazy(() =>
 export const LazyProjectsPage = lazy(() =>
   import('@/pages/ProjectsPage').then((m) => ({ default: m.ProjectsPage })),
 )
+export const LazyResumePage = lazy(() =>
+  import('@/pages/ResumePage').then((m) => ({ default: m.ResumePage })),
+)
 export const LazyContactPage = lazy(() =>
   import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })),
 )

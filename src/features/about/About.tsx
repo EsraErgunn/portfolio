@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useAboutContent } from './about.hook'
 import { AboutBio } from './AboutBio'
 import { AboutFocusAreas } from './AboutFocusAreas'
+import { AboutEducation } from './AboutEducation'
 import { Section, Container, SectionBackground, SectionHeading } from '@/components/layout'
 import { Avatar } from '@/components/ui'
 import { staggerContainer, staggerItem, fade } from '@/animations'
@@ -31,11 +32,13 @@ export function About() {
 
           <AboutBio paragraphs={content.bio} />
           <AboutFocusAreas areas={content.focusAreas} />
+          <AboutEducation education={content.education} />
         </motion.div>
 
         <motion.div variants={fade} initial="hidden" animate="visible">
           <Avatar
             initials={content.avatarInitials}
+            imageSrc={content.avatarImageSrc}
             label={`Photo of ${content.name}`}
             size="lg"
             className="shadow-lg"

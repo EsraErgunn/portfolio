@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { ComponentType, SVGProps } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Copy, Mail, MapPin } from 'lucide-react'
+import { Check, Copy, Mail, MapPin, Phone } from 'lucide-react'
 import { staggerItem } from '@/animations'
 import { Card, Typography, IconButton } from '@/components/ui'
 import { GithubIcon, LinkedinIcon } from '@/components/icons'
@@ -9,6 +9,7 @@ import type { ContactMethod, ContactMethodType } from './contact.types'
 
 const ICONS: Record<ContactMethodType, ComponentType<SVGProps<SVGSVGElement>>> = {
   email: Mail,
+  phone: Phone,
   github: GithubIcon,
   linkedin: LinkedinIcon,
   location: MapPin,
@@ -31,6 +32,10 @@ export function ContactCard({ method }: ContactCardProps) {
   const [copied, setCopied] = useState(false)
   const Icon = ICONS[method.type]
   const isEmail = method.type === 'email'
+  // mailto:/tel: links are handled by the OS, not a browser tab - opening
+  // them with target="_blank" would be meaningless (and on some mobile
+  // browsers, briefly flashes an empty tab). Only real http(s) links get it.
+  const isDeviceLink = method.type === 'email' || method.type === 'phone'
 
   async function handleCopy() {
     try {
@@ -62,8 +67,8 @@ export function ContactCard({ method }: ContactCardProps) {
           {method.href ? (
             <a
               href={method.href}
-              target={isEmail ? undefined : '_blank'}
-              rel={isEmail ? undefined : 'noopener noreferrer'}
+              target={isDeviceLink ? undefined : '_blank'}
+              rel={isDeviceLink ? undefined : 'noopener noreferrer'}
               className="block truncate text-body font-medium text-foreground transition-colors hover:text-primary"
             >
               {method.value}

@@ -5,12 +5,19 @@ import { Avatar } from '@/components/ui'
 interface HeroImageProps {
   initials: string
   name: string
+  imageSrc?: string
 }
 
-export function HeroImage({ initials, name }: HeroImageProps) {
+export function HeroImage({ initials, name, imageSrc }: HeroImageProps) {
   return (
     <motion.div variants={fade} initial="hidden" animate="visible">
-      <Avatar initials={initials} label={`Photo of ${name}`} size="lg" className="shadow-lg" />
+      <Avatar
+        initials={initials}
+        imageSrc={imageSrc}
+        label={`Photo of ${name}`}
+        size="lg"
+        className="shadow-lg"
+      />
     </motion.div>
   )
 }

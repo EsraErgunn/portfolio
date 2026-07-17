@@ -21,7 +21,7 @@ export function Projects() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="grid w-full gap-6 text-left sm:grid-cols-2 lg:grid-cols-3"
+          className="grid w-full max-w-4xl gap-6 text-left sm:grid-cols-2"
         >
           {content.projects.map((project) => (
             <ProjectCard key={project.title} project={project} />

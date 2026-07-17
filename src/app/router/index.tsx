@@ -9,6 +9,7 @@ import {
   LazySkillsPage,
   LazyExperiencePage,
   LazyProjectsPage,
+  LazyResumePage,
   LazyContactPage,
   LazyNotFoundPage,
 } from './lazyPages'
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.SKILLS, element: withSuspense(<LazySkillsPage />) },
       { path: ROUTES.EXPERIENCE, element: withSuspense(<LazyExperiencePage />) },
       { path: ROUTES.PROJECTS, element: withSuspense(<LazyProjectsPage />) },
+      { path: ROUTES.RESUME, element: withSuspense(<LazyResumePage />) },
       { path: ROUTES.CONTACT, element: withSuspense(<LazyContactPage />) },
       { path: '*', element: withSuspense(<LazyNotFoundPage />) },
     ],

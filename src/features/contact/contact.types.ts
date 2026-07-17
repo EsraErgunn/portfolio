@@ -1,4 +1,4 @@
-export type ContactMethodType = 'email' | 'github' | 'linkedin' | 'location'
+export type ContactMethodType = 'email' | 'phone' | 'github' | 'linkedin' | 'location'
 
 export interface ContactMethod {
   type: ContactMethodType
